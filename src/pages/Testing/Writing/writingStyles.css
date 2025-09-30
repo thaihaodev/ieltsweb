@@ -1,0 +1,142 @@
+/* WritingTestsPage.css */
+
+/* --- STYLE CHUNG VÀ TÁI SỬ DỤNG TỪ LISTENING --- */
+
+/* Thiết lập chung cho layout */
+.writing-tests-layout { /* Tái sử dụng class chung nếu layout giống nhau */
+    min-height: 100vh;
+    background-color: #f7fafc; 
+}
+
+/* Thanh header (chứa breadcrumb) */
+.writing-tests-layout .header-bar {
+    padding: 20px 50px 0;
+    background-color: white;
+}
+
+/* Nội dung chính */
+.writing-tests-layout .main-content {
+    padding: 20px 50px 50px;
+}
+
+/* Hàng lọc và tìm kiếm */
+.writing-tests-layout .filter-row {
+    margin-bottom: 30px;
+}
+
+/* Input tìm kiếm */
+.writing-tests-layout .search-input {
+    border-radius: 6px;
+    padding: 10px 15px;
+}
+
+/* Card bài kiểm tra */
+.writing-tests-layout .test-card {
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
+    transition: all 0.3s;
+    height: 100%; 
+}
+
+.writing-tests-layout .test-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tùy chỉnh Tiêu đề bài kiểm tra */
+.writing-tests-layout .test-title {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin-bottom: 12px !important; 
+    color: #333;
+    line-height: 1.3em;
+    display: block;
+    width: 100%;
+}
+
+/* Kỹ thuật Webkit Ellipsis cho đa dòng */
+.writing-tests-layout .ellipsis-title {
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    height: 48px; /* Đặt chiều cao cố định cho 2 dòng */
+}
+
+
+/* --- STYLE ĐẶC TRƯNG CHO WRITING CARD --- */
+
+/* Container cho Part 1/Part 2 */
+.writing-tests-layout .writing-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; 
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0; /* Đường kẻ phân cách */
+}
+
+.writing-tests-layout .writing-info .info-item {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: #e5e7eb;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+/* Tiền tố "Test:" màu xanh */
+.writing-tests-layout .test-prefix {
+    color: #1890ff; 
+    margin-right: 4px;
+}
+
+/* Nút Bắt đầu được căn giữa cho Writing Card */
+.writing-tests-layout .writing-footer {
+    justify-content: center !important; 
+    padding-top: 0 !important;
+}
+
+/* .writing-footer .start-button {
+    width: 100%; 
+    padding: 8px 12px; 
+} */
+
+.writing-tests-layout .start-button {
+    /* background-color: #009999; 
+    border-color: #009999;  */
+    border-radius: 8px; 
+    font-size: 14px; /* Kích thước chữ to hơn */
+    height: 40px; /* Chiều cao cố định cho nút lớn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+/* Tùy chỉnh icon */
+.writing-tests-layout .start-button .anticon {
+    font-size: 13px; /* Kích thước icon lớn hơn chữ một chút */
+    margin-right: -4px; /* Điều chỉnh vị trí icon sát hơn */
+    padding:5px 2px;
+}
+
+/* Hiệu ứng khi di chuột (Hover) */
+/* .start-button:hover {
+    background-color: #008080; 
+    border-color: #008080;
+} */
+
+
+/* Phân trang */
+.writing-tests-layout .pagination-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+}
+/* ... (thêm các style phân trang phụ khác nếu cần) */

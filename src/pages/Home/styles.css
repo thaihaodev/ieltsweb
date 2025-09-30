@@ -1,0 +1,192 @@
+/* src/components/HomePage/HeroSection.css */
+
+.hero-container-compact {
+  /* Giảm padding dọc để thu gọn không gian */
+  width: 100%;
+  padding: 40px 50px 50px 50px; /* Giảm 80px xuống 60px */
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* Điều chỉnh kích thước Tiêu đề */
+.hero-title-compact {
+  font-size: 44px !important; /* Giảm từ 56px xuống 44px */
+  line-height: 1.2 !important;
+  font-weight: 800 !important;
+  color: #000;
+  margin-bottom: 0 !important;
+}
+
+.highlight-text-compact {
+  color: #ff8c42;
+}
+
+/* Định dạng Carousel Image */
+.carousel-image {
+  width: 100%;
+  height: auto;
+  /* Đảm bảo ảnh chiếm hết không gian và có bo góc */
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Định dạng dấu chấm Carousel (tùy chỉnh) */
+.carousel-dots-custom li button {
+  background: #ccc; /* Màu mặc định của dot */
+}
+
+.carousel-dots-custom li.slick-active button {
+  background: #ff8c42; /* Màu dot khi active */
+}
+
+/* Media query cho thiết bị di động (tùy chỉnh thêm) */
+@media (max-width: 768px) {
+  .hero-container-compact {
+    padding: 40px 20px;
+  }
+  .hero-title-compact {
+    font-size: 30px !important;
+  }
+  .image-col-compact {
+    margin-top: 30px;
+  }
+}
+
+/* src/components/HomePage/StatisticSection.css (hoặc Global CSS) */
+.statistic-section-container {
+  background-color: #fff;
+  padding: 10px 50px 50px 50px;
+  text-align: center;
+}
+
+.section-title {
+  font-weight: 800 !important;
+  margin-bottom: 30px !important;
+  color: #0d283c;
+}
+
+/* --- ĐỊNH DẠNG CARD (SỬ DỤNG KÍCH THƯỚC CỐ ĐỊNH) --- */
+.statistic-card {
+  border-radius: 12px;
+  border: none !important;
+  /* ÁP DỤNG MÀU NỀN CARD (TRẮNG HƠN NỀN CHUNG) */
+  background-color: #e6f0f2; /* Card nền trắng hơn nền tổng thể */
+  /* SET CỨNG KÍCH THƯỚC (QUAN TRỌNG ĐỂ CÁC CARD ĐỒNG ĐỀU) */
+  height: 200px; /* Chiều cao cố định */
+  width: 100%; /* Đảm bảo nó chiếm hết Col */
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* Đảm bảo nội dung không bị che bởi ảnh nền */
+  position: relative;
+  text-align: left; /* Căn chữ bên trong Card về trái */
+}
+
+/* Định dạng giá trị (con số) */
+.stat-value {
+  font-size: 56px !important; /* Tăng kích thước số */
+  font-weight: 900 !important;
+  color: #ff4d4f !important; /* Màu đỏ nổi bật */
+  line-height: 1.1 !important;
+  margin-bottom: 0px !important; /* Bỏ margin để sát hơn */
+}
+
+/* Định dạng mô tả (Label) */
+.stat-label {
+  font-size: 16px;
+  color: #545861;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* Đảm bảo bố cục phù hợp với 3 Card trên 1 hàng */
+@media (min-width: 992px) {
+  /* Cho màn hình desktop (lg) */
+  .stat-col {
+    /* Set Card chiếm 1/3 (8/24) */
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+/* TargetAudienceSection.tsx */
+.target-audience-section {
+    padding: 10px 50px 50px 50px;
+    text-align: center;
+    background-color: #fff; /* Màu nền nhẹ nhàng */
+}
+
+.sparkle-left, .sparkle-right {
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+/* Card chứa nội dung */
+.audience-card {
+    max-width: 1100px; /* Giới hạn chiều rộng card */
+    margin: 0 auto;
+    border-radius: 16px !important; /* Bo góc mềm mại */
+    background-color: white;
+}
+.audience-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    transition: all 0.7s ease;
+}
+
+/* Container hình ảnh */
+.image-container {
+    padding:0 10px;
+    background-color: #fff;
+    border-radius: 12px;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); */
+}
+
+.target-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Tùy chỉnh danh sách */
+.target-list-item {
+    border-bottom: none !important; /* Loại bỏ đường kẻ List mặc định */
+    padding: 8px 0 !important; /* Giảm padding để gọn hơn */
+}
+
+/* Đảm bảo nội dung list item được căn chỉnh hợp lý */
+.list-item-content {
+    text-align: left;
+    width: 100%;
+}
+
+/* Icon và Title cùng nằm trên 1 hàng ngang */
+.item-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px; /* Khoảng cách với mô tả */
+}
+
+.item-title {
+    margin-left: 10px; /* Khoảng cách giữa icon và tiêu đề */
+    font-size: 16px;
+    color: #333;
+}
+
+.item-title:hover {
+    color: #354dc3;
+}
+
+.item-description {
+    display: block; /* Đảm bảo mô tả xuống dòng */
+    margin-left: 30px; /* Căn lề cho mô tả thẳng hàng với tiêu đề */
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Loại bỏ padding cuối cùng của list item */
+.target-list-item:last-child {
+    padding-bottom: 0;
+}

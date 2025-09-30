@@ -1,0 +1,140 @@
+/* Thiết lập chung cho layout */
+.listening-tests-layout {
+    min-height: 100vh;
+    background-color: #f7fafc; /* Màu nền trắng xám nhẹ */
+}
+
+/* Thanh header (chứa breadcrumb) */
+.listening-tests-layout .header-bar {
+    padding: 20px 50px 0;
+    background-color: white;
+}
+
+/* Nội dung chính */
+.listening-tests-layout .main-content {
+    padding: 20px 50px 50px;
+}
+
+/* Hàng lọc và tìm kiếm */
+.listening-tests-layout .filter-row {
+    margin-bottom: 30px;
+}
+
+/* Input tìm kiếm */
+.listening-tests-layout .search-input {
+    border-radius: 6px;
+    padding: 10px 15px;
+}
+
+/* Select sắp xếp */
+.listening-tests-layout .sort-select {
+    width: 100%;
+}
+
+/* Card bài kiểm tra */
+.listening-tests-layout .test-card {
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Bóng mờ nhẹ */
+    transition: all 0.3s;
+    height: 100%; /* Quan trọng để các card cùng hàng có chiều cao bằng nhau */
+}
+
+.listening-tests-layout .test-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.listening-tests-layout .test-title {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin: 12px 6px !important;
+    color: #333;
+    /* min-height: 50px; */
+}
+
+.listening-tests-layout .ellipsis-title {
+    max-height: 48px;
+    line-height: 1.3;
+    overflow: hidden; 
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+/* Thông tin chi tiết (Thời gian, Số câu) */
+.listening-tests-layout .test-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: #8c8c8c;
+}
+
+.listening-tests-layout .info-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.listening-tests-layout .info-item span {
+    margin-left: 8px;
+}
+
+/* Footer Card (Trạng thái và nút) */
+.listening-tests-layout .card-footer {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+}
+
+.listening-tests-layout .test-status {
+    color: #8c8c8c; /* Màu chữ xám cho trạng thái */
+}
+
+.listening-tests-layout .start-button {
+    background-color: #1890ff; /* Màu xanh dương chủ đạo */
+    border-color: #1890ff;
+    border-radius: 4px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    padding: 4px 12px;
+}
+
+.listening-tests-layout .start-button .anticon {
+    font-size: 12px;
+}
+
+/* Phân trang */
+.listening-tests-layout .pagination-container {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc (nếu cần) */
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* Tùy chỉnh hiển thị Trang X / Y */
+.listening-tests-layout .ant-pagination-item-link,
+.listening-tests-layout .ant-pagination-prev {
+    border: none !important; /* Loại bỏ border mặc định */
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.listening-tests-layout .ant-pagination-prev .ant-pagination-item-link {
+    font-size: 14px;
+    color: #595959 !important;
+}
+
+/* Tùy chỉnh số trang */
+.listening-tests-layout .ant-pagination-item {
+    border: none !important;
+}
+
+.listening-tests-layout .ant-pagination-item-active {
+    background: transparent !important;
+    border: none !important;
+    font-weight: bold;
+    color: #333 !important;
+}

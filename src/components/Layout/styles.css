@@ -1,0 +1,33 @@
+.vip-button {
+  background: linear-gradient(90deg, #6b7176, #495057); /* xám đậm */
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  padding: 6px 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.ant-btn.vip-button:hover,
+.vip-button.ant-btn:hover {
+  background: linear-gradient(90deg, #f6aa1c, #ffb347) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+.header-default {
+  /* Style mặc định: Không có border hoặc border mờ */
+  border-bottom: 1px solid transparent; 
+  transition: border-bottom 0.3s ease-in-out; /* Thêm transition cho chuyển đổi mượt */
+}
+
+.header-scrolled {
+  /* Style khi đã cuộn (scrolled) */
+  border-bottom: 1px solid #d9d9d9; /* Màu border nhẹ khi cuộn */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Có thể thêm shadow nhẹ */
+  transition: border-bottom 0.3s ease-in-out; 
+}

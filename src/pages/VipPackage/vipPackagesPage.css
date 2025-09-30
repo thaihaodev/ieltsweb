@@ -1,0 +1,421 @@
+/* VipPackagesPage.css */
+
+/* --- Layout Chung --- */
+.vip-page-layout {
+    min-height: 100vh;
+    background-color: #f7fafc; 
+}
+
+.header-bar-vip {
+    padding: 20px 50px 0;
+    background-color: white;
+}
+
+.main-content-vip {
+    padding: 20px 50px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Header Trang --- */
+.vip-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+
+.crown-icon {
+    font-size: 40px;
+    color: #4CAF50; /* Màu xanh lá cây */
+    margin-bottom: 10px;
+}
+
+.site-title {
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    color: #333;
+    margin-bottom: 5px !important;
+}
+
+.sub-header-text {
+    font-size: 16px;
+    color: #555;
+    display: block;
+}
+
+/* --- Filter Bar --- */
+.skill-filter-bar {
+    margin-bottom: 50px;
+    background-color: white;
+    padding: 20px 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    min-width: 1100px !important;
+}
+
+.skill-button {
+    border: 1px solid #d9d9d9;
+    border-radius: 20px; /* Bo tròn mạnh */
+    height: 40px;
+    font-weight: 500;
+    color: #555;
+    transition: all 0.3s;
+}
+
+.skill-button:hover {
+    color: #009999;
+    border-color: #009999;
+}
+
+.skill-button.active {
+    background-color: #4CAF50; /* Màu xanh lá cây */
+    border-color: #4CAF50;
+    color: white;
+    font-weight: 600;
+}
+
+.skill-button.active:hover {
+    background-color: #388E3C;
+    border-color: #388E3C;
+    color: white;
+}
+
+/* --- Vip Card --- */
+.vip-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.vip-card .ant-card-body {
+    flex-grow: 1; /* Quan trọng để đẩy footer xuống dưới cùng */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Card (Thời hạn) */
+.card-header-info {
+    margin-bottom: 15px;
+}
+
+.duration-pill {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e8f5e9; /* Màu nền xanh lá nhạt */
+    color: #4CAF50;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.duration-pill .anticon {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.duration-pill .ant-typography {
+    color: #4CAF50;
+    margin-left: 5px;
+}
+
+/* Tiêu đề gói */
+.vip-page-layout .package-title {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin-bottom: 15px !important;
+    min-height: 44px; /* Đảm bảo chiều cao thống nhất */
+}
+
+/* Phần Mô tả Tính năng */
+.package-features {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.feature-icon {
+    color: #4CAF50;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+
+.feature-description {
+    font-size: 14px;
+    color: #595959;
+}
+
+/* Footer Card (Giá và Nút) */
+.card-footer-vip {
+    margin-top: auto; /* Đẩy footer xuống đáy */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.package-price {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: #333;
+    margin: 0 !important;
+}
+
+.price-group .ant-typography-secondary {
+    font-size: 14px;
+    color: #8c8c8c;
+}
+
+.register-button {
+    background-color: #009999;
+    border-color: #009999;
+    border-radius: 4px;
+    font-weight: 600;
+    height: 40px;
+    padding: 0 20px;
+    transition: all 0.3s;
+}
+
+.register-button:hover {
+    background-color: #008080;
+    border-color: #008080;
+}
+
+/*  */
+/* MyVipPackagePage.css */
+
+/* --- Layout Chung --- */
+.my-vip-layout {
+    min-height: 100vh;
+    background-color: #f7fafc; 
+}
+
+.header-bar-my-vip {
+    padding: 20px 50px 0;
+    background-color: white;
+}
+
+.main-content-my-vip {
+    padding: 20px 50px 50px;
+    max-width: 1200px;
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Header Trang --- */
+.vip-header-my-page {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 10px;
+}
+
+.crown-icon-star {
+    font-size: 30px;
+    color: #FFC107; /* Màu vàng ngôi sao */
+    margin-bottom: 15px;
+}
+
+.my-vip-layout .page-title {
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    color: #66BB6A; /* Màu xanh lá cây đậm */
+    margin-bottom: 5px !important;
+}
+
+.sub-header-text-manage {
+    font-size: 16px;
+    color: #555;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.bold-text {
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+/* --- Filter Bar (Tags) --- */
+.package-filter-bar {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.package-tag-button {
+    border-radius: 6px; /* Góc bo nhẹ nhàng */
+    height: 35px;
+    font-size: 14px;
+    padding: 0 15px;
+    border: none;
+    transition: all 0.2s;
+}
+
+/* --- Khối Trạng thái Gói (Status Cards) --- */
+.status-row {
+    margin-bottom: 50px;
+}
+
+.status-card {
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.status-title {
+    font-size: 14px;
+    color: #888;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.status-value {
+    font-weight: 700 !important;
+    font-size: 26px !important;
+    margin: 0 !important;
+}
+
+/* --- Nội dung chính (Không có gói VIP) --- */
+.no-package-card {
+    text-align: center;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sad-icon {
+    font-size: 48px;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.no-package-title {
+    font-weight: 600 !important;
+    margin-bottom: 5px !important;
+}
+
+.no-package-text {
+    display: block;
+    margin-bottom: 25px;
+}
+
+.view-packages-button {
+    background-color: #8BC34A; /* Màu xanh lá nổi bật */
+    border-color: #8BC34A;
+    color: white;
+    font-weight: 600;
+    height: 40px;
+    border-radius: 6px;
+}
+
+.view-packages-button:hover {
+    background-color: #689F38;
+    border-color: #689F38;
+    color: white;
+}
+
+.package-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Khoảng cách giữa các gói */
+    margin-top: 30px;
+}
+
+.active-package-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+}
+
+/* Hiệu ứng mờ cho gói đã hết hạn */
+.active-package-card.expired {
+    opacity: 0.6;
+    background-color: #fafafa;
+}
+
+.package-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.active-package-title {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    color: #333;
+    flex-grow: 1;
+}
+
+.package-status-tag {
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-left: 15px;
+}
+
+.package-details {
+    margin-bottom: 20px;
+}
+
+.package-details .ant-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.package-details .ant-typography-secondary {
+    font-size: 13px;
+    color: #8c8c8c;
+    margin-bottom: 4px;
+}
+
+.detail-value {
+    font-size: 15px;
+    color: #333;
+}
+
+.expiry-date {
+    color: #D32F2F; /* Màu đỏ cho ngày hết hạn */
+    font-weight: 700;
+}
+
+.my-vip-layout .package-price {
+    font-weight: 700;
+    color: #009999; /* Màu xanh ngọc */
+}
+
+/* Footer Action Button */
+.package-footer-actions {
+    text-align: right;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.action-button {
+    font-weight: 600;
+    height: 38px;
+    border-radius: 6px;
+    padding: 0 20px;
+}
+
+.renew-button {
+    background-color: #FFC107; /* Màu vàng nổi bật cho nút Gia hạn */
+    border-color: #FFC107;
+    color: white;
+}
+
+.renew-button:hover {
+    background-color: #FFA000;
+    border-color: #FFA000;
+}
+
+.view-detail-button {
+    color: #009999;
+    border-color: #009999;
+}

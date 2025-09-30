@@ -1,0 +1,54 @@
+/* --- Tinh chỉnh cho Speaking Card --- */
+
+/* Điều chỉnh lại khoảng trống bên dưới tiêu đề để card cân đối hơn */
+.speaking-title-container {
+    margin-bottom: 20px !important; /* Tăng khoảng cách dưới tiêu đề */
+}
+
+/* Container cho Số câu hỏi */
+.speaking-info {
+    padding: 10px 0;
+    margin-bottom: 30px; /* Tăng khoảng cách trên nút */
+    background-color: #f7f7f7; /* Màu nền xám nhạt cho khu vực info */
+    border-radius: 4px;
+    
+    /* Canh lề và icon */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.speaking-info .info-item {
+    display: flex;
+    align-items: center;
+    padding: 0 15px; /* Padding ngang */
+}
+
+.speaking-icon {
+    color: #4CAF50; /* Màu xanh lá cây cho icon (mô phỏng icon đồ thị nhỏ) */
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+.speaking-info .info-item .ant-typography-secondary {
+    color: #595959;
+}
+
+/* Tiền tố "Topic:" màu xanh ngọc đậm */
+.speaking-prefix {
+    color: #009999; /* Sử dụng màu xanh của nút Bắt đầu */
+    margin-right: 4px;
+}
+
+/* Footer (Nút Bắt đầu) */
+.speaking-footer {
+    justify-content: center !important; 
+    border-top: none !important; /* Không có đường kẻ */
+    padding-top: 0 !important;
+}
+
+.speaking-footer .start-button {
+    /* Đảm bảo style nút thống nhất */
+    font-size: 16px; 
+    height: 40px; 
+}

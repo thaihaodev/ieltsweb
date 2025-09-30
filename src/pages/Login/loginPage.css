@@ -1,0 +1,240 @@
+/* --- Layout Chung --- */
+.login-page-layout {
+  min-height: 100vh;
+  background-color: #f7fafc; /* Màu nền nhẹ nhàng */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-content {
+  padding: 10px;
+  width: 100%;
+}
+
+.login-card {
+  max-width: 800px; /* Chiều rộng tối đa cho card đăng nhập */
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Quan trọng để bo góc hình ảnh */
+  display: flex;
+}
+
+.login-card .ant-card-body {
+  padding: 0 !important; /* XÓA PADDING TỔNG THỂ CỦA CARD BODY */
+  height: 100%;
+  width: 100%;
+}
+
+/* --- Cột Trái: Hình ảnh Minh họa --- */
+.login-illustration-col {
+  background-color: #f0fdf7; /* Màu nền xanh lá nhạt cho hình ảnh */
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.login-illustration-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-illustration-image {
+  width: 100%;
+  height: 100%;
+  /* QUAN TRỌNG: Đảm bảo hình ảnh không bị biến dạng và vừa vặn */
+  object-fit: contain; /* Đảm bảo hình ảnh vừa vặn mà không bị cắt */
+  border-radius: 8px; /* Bo góc hình ảnh bên trong */
+}
+
+/* --- Cột Phải: Form Đăng nhập --- */
+.login-form-col {
+  padding: 15px;
+  /* THÊM: Nếu bạn muốn chiều cao của 2 cột bằng nhau */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form-container {
+  width: 100%;
+}
+
+.login-title {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #8bc34a !important; /* Màu xanh lá chính */
+  margin-bottom: 25px !important;
+  text-align: center;
+}
+
+/* Input và Form Item */
+.form-item-spacing .ant-form-item-label {
+  padding-bottom: 4px; /* Giảm khoảng cách giữa label và input */
+}
+
+.custom-input.ant-input-lg,
+.custom-input .ant-input-affix-wrapper-lg {
+  height: 40px !important; /* Tăng chiều cao input */
+  border-radius: 6px !important; /* Bo góc input */
+}
+
+.custom-input .ant-input-affix-wrapper input {
+    /* Đảm bảo input bên trong có chiều cao đầy đủ */
+    height: 100%; 
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.custom-input .ant-input-affix-wrapper {
+    height: 100%; 
+}
+
+.password-label-wrapper {
+    width: 100%; /* Đảm bảo wrapper chiếm toàn bộ chiều rộng của label container */
+    display: flex; /* KÍCH HOẠT FLEXBOX */
+    justify-content: space-between; /* ĐẨY 2 PHẦN TỬ (Label và Link) ra 2 bên */
+    align-items: center;
+    line-height: normal; /* Đảm bảo chiều cao không bị nhảy */
+}
+
+.forgot-password-inline {
+    color: #8bc34a; /* Màu xanh lá */
+    font-size: 14px; /* Kích thước chữ nhỏ hơn */
+    font-weight: 500;
+    white-space: nowrap; /* Ngăn không cho link xuống dòng */
+    margin-left: 10px; /* Khoảng cách với label */
+}
+
+.forgot-password-inline:hover {
+    color: #689f38; /* Màu xanh lá */
+}
+
+/* Ghi đè margin mặc định của Form.Item label */
+.ant-form-item-label > label {
+    width: 100%; /* Đảm bảo label chiếm hết không gian để Flexbox hoạt động */
+    padding-bottom: 0 !important; /* Xóa padding mặc định */
+}
+
+/* Nút Đăng nhập chính */
+.login-button {
+  background-color: #8bc34a; /* Màu xanh lá nổi bật */
+  border-color: #8bc34a;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+.login-button:hover {
+  background-color: #689f38 !important;
+  border-color: #689f38 !important;
+}
+
+/* Divider */
+.login-divider.ant-divider-horizontal.ant-divider-with-text-center {
+  margin: 25px 0;
+  color: #999;
+}
+
+/* Nút Đăng nhập với Google */
+.google-login-button {
+  width: 100%;
+  height: 45px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: 1px solid #ddd;
+  color: #555;
+}
+
+.google-login-button .anticon {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+/* Link Đăng ký */
+.register-link-container {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+.register-link {
+  color: #8bc34a !important;
+  font-weight: 600;
+}
+
+.register-link:hover {
+  color: #689f38 !important;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .login-card {
+    max-width: 400px;
+  }
+  .login-form-col {
+    padding: 30px 20px;
+  }
+  /* Ẩn cột hình ảnh trên màn hình nhỏ */
+  .login-illustration-col {
+    display: none;
+  }
+}
+
+
+/* Thêm các style riêng cho trang Quên Mật khẩu vào cuối file */
+
+.forgot-password-intro {
+    font-size: 14px;
+    color: #555;
+    display: block;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    text-align: left; /* Đảm bảo văn bản căn trái */
+}
+
+/* Nút Gửi liên kết */
+.send-link-button {
+    /* Tái sử dụng style của nút Đăng nhập */
+    background-color: #8BC34A; 
+    border-color: #8BC34A;
+    margin-top: 10px; /* Giảm margin so với nút Đăng nhập */
+    height: 48px; /* Tăng chiều cao lên 48px nếu muốn nút lớn hơn */
+}
+
+.send-link-button:hover {
+    background-color: #689F38;
+    border-color: #689F38;
+}
+
+/* Link Quay lại Đăng nhập */
+.back-to-login-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.back-to-login-link {
+    color: #66BB6A;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.back-to-login-link:hover {
+    color: #38703B;
+}
+
+/* Nếu bạn muốn Input Email có chiều cao khác */
+.email-input-item .custom-input.ant-input-lg {
+    height: 48px; 
+}
