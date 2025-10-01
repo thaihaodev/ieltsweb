@@ -14,6 +14,7 @@ import VipPackagesPage from "../pages/VipPackage/VipPackagesPage";
 import MyVipPackagePage from "../pages/VipPackage/MyVipPackagePage";
 import ForgotPasswordPage from "../pages/Login/ForgotPasswordPage";
 import RegistrationSuccessPage from "../pages/Register/RegistrationSuccessPage";
+import ProfilePage from "../pages/Profile/ProfilePage";
 
 const AppRoutes = () => {
   return (
@@ -33,6 +34,7 @@ const AppRoutes = () => {
         <Route path="/testing/speaking" element={<SpeakingPage />} />
         <Route path="/vip-packages" element={<VipPackagesPage />} />
         <Route path="/my-vip-package" element={<MyVipPackagePage />} />
+        <Route path="/my-profile" element={<ProfilePage />} />
       </Route>
     </Routes>
   );

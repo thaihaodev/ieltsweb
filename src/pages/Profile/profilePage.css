@@ -1,0 +1,90 @@
+/* 1. Content Wrapper */
+.profile-page-content {
+  padding: 20px 50px 50px;
+  background-color: #f5f7fa;
+  min-height: 80vh;
+}
+
+.profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-main-card {
+  padding: 0 !important; /* Xóa padding mặc định của Card */
+}
+
+.profile-page-title {
+  padding: 0px 24px;
+  margin-bottom: 0 !important;
+  color: #333;
+  font-weight: 700 !important;
+  font-size: 24px !important;
+}
+
+.profile-tabs {
+  padding: 0 24px;
+}
+
+.profile-tab-content {
+  padding: 16px 0 24px;
+  min-height: 400px;
+}
+
+.profile-page-content .ant-card {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+}
+
+.profile-page-content .ant-tabs-tab:hover .ant-tabs-tab-btn {
+  color: #8bc34a !important;
+}
+
+.profile-page-content .ant-tabs-nav {
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 0 10px;
+}
+
+/* Màu chữ của Tab đang được chọn */
+.profile-page-content .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #8bc34a !important;
+  font-weight: 600;
+}
+
+/* Màu gạch chân của Tab đang được chọn */
+.profile-page-content .ant-tabs-ink-bar {
+  background-color: #8bc34a !important;
+  height: 3px !important;
+}
+
+.profile-page-content .ant-tabs-tab .anticon {
+  margin-right: 8px;
+  color: #8bc34a; /* Icon cũng màu xanh lá mạ */
+}
+
+.profile-page-content .overview-user-info .ant-avatar {
+  background-color: #8bc34a !important; /* Màu nền Avatar */
+}
+
+/* Nút Choose File */
+.profile-edit-tab .ant-form-item-control-input .ant-btn {
+  background-color: #8bc34a !important;
+  border-color: #8bc34a !important;
+  color: #fff !important;
+  border-radius: 6px;
+}
+
+.profile-edit-tab .ant-form-item-control-input .ant-btn:hover {
+  background-color: #689f38 !important;
+}
+
+.ant-form-item-control-input-content .ant-btn-primary {
+  background-color: #8bc34a !important;
+  border-color: #8bc34a !important;
+}
+
+.ant-form-item-control-input-content .ant-btn-primary:hover {
+  background-color: #689f38 !important;
+}

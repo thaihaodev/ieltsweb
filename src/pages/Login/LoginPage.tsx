@@ -9,13 +9,16 @@ import {
   Button,
   Typography,
   Divider,
+  // notification,
+  // message,
+  App,
 } from "antd";
 import {
   EyeInvisibleOutlined,
   EyeTwoTone,
   GoogleOutlined,
 } from "@ant-design/icons";
-// import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 import "./loginPage.css";
 import { useNavigate } from "react-router-dom";
 
@@ -27,68 +30,63 @@ const MOCK_USER_DATA = {
   id: "user-123",
   username: "Lê Văn A",
   avatarUrl: "https://i.pravatar.cc/150?img=1",
+  gmail: "tranthaihao199x@gmail.com",
 };
 
 const LoginPage: React.FC = () => {
-  const [loading, setLoading] = useState(false);
+  const { message } = App.useApp();
   const navigate = useNavigate();
-  // const { login, setIsLoading } = useAuth();
+  const [loadingButton, setLoadingButton] = useState(false);
+  const { login, setIsLoading } = useAuth();
+  const [form] = Form.useForm();
 
-  const onFinish = (values: any) => {
-    setLoading(true);
-    console.log("Login attempt with:", values);
-    // Simulate API call
-    setTimeout(() => {
-      setLoading(false);
-      // alert(`Đăng nhập thành công với tài khoản: ${values.username}`);
-      // Redirect user
-    }, 2000);
+  const onFinish = async (values: any) => {
+    // Xóa lỗi cũ trước khi gửi lại
+    form.setFields([
+      { name: "username", errors: [] },
+      { name: "password", errors: [] },
+    ]);
+
+    setIsLoading(true);
+    setLoadingButton(true);
+
+    try {
+      // Giả lập API call
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
+      if (values.username === "test" && values.password === "123456") {
+        login(MOCK_USER_DATA); // Lưu vào Context & sessionStorage
+        message.success("Đăng nhập thành công!");
+
+        setTimeout(() => {
+          navigate("/");
+        }, 500);
+      } else {
+        // 2. THIẾT LẬP LỖI THỦ CÔNG CHO CẢ 2 TRƯỜNG
+        const errorMessage = "Tài khoản hoặc mật khẩu không chính xác";
+        const errorMessage1 = "";
+        form.setFields([
+          {
+            name: "username",
+            errors: [errorMessage1],
+          },
+          {
+            name: "password",
+            errors: [errorMessage],
+          },
+        ]);
+        setIsLoading(false);
+      }
+    } catch (error) {
+      message.error("Lỗi hệ thống.");
+      setIsLoading(false);
+    } finally {
+      setTimeout(() => {
+        setIsLoading(false);
+        setLoadingButton(false);
+      }, 1000);
+    }
   };
-
-  // const onFinish = async (values: any) => {
-  //       setIsLoading(true); // BẬT LOADING TOÀN CỤC
-
-  //       try {
-  //           // 1. Giả lập gọi API đăng nhập (Delay 1.5s để thấy Loading Page)
-  //           await new Promise(resolve => setTimeout(resolve, 1500)); 
-            
-  //           // 2. Xử lý logic đăng nhập thành công
-  //           if (values.username === 'test' && values.password === '123456') {
-                
-  //               // 3. Lưu thông tin người dùng
-  //               login(MOCK_USER_DATA);
-
-  //               notification.success({
-  //                   message: 'Đăng nhập thành công',
-  //                   description: `Chào mừng ${MOCK_USER_DATA.username} trở lại!`,
-  //                   placement: 'topRight',
-  //                   duration: 1.5,
-  //               });
-
-  //               // 4. Chuyển hướng về trang chủ
-  //               setTimeout(() => {
-  //                   setIsLoading(false); // TẮT LOADING
-  //                   navigate('/'); // Chuyển về trang chủ
-  //               }, 500); // Đợi thêm 0.5s sau thông báo
-
-  //           } else {
-  //               // Xử lý đăng nhập thất bại
-  //               notification.error({
-  //                   message: 'Đăng nhập thất bại',
-  //                   description: 'Tên đăng nhập hoặc mật khẩu không đúng.',
-  //                   placement: 'topRight',
-  //               });
-  //               setIsLoading(false); // TẮT LOADING ngay khi thất bại
-  //           }
-  //       } catch (error) {
-  //           notification.error({
-  //               message: 'Lỗi hệ thống',
-  //               description: 'Không thể kết nối đến máy chủ đăng nhập.',
-  //               placement: 'topRight',
-  //           });
-  //           setIsLoading(false); // TẮT LOADING khi có lỗi
-  //       } 
-  //   };
 
   return (
     <Layout className="login-page-layout">
@@ -97,10 +95,9 @@ const LoginPage: React.FC = () => {
           <Row gutter={0}>
             {/* Cột Trái: Hình ảnh Minh họa */}
             <Col xs={0} sm={0} md={12} className="login-illustration-col">
-              {/* Vị trí để đặt hình ảnh hoặc component minh họa */}
               <div className="login-illustration-placeholder">
                 <img
-                  src="https://i.pinimg.com/736x/05/d7/84/05d784805e083785e14d8555d9428c1b.jpg" // Đổi đường dẫn này cho khớp với hình ảnh của bạn trong thư mục public
+                  src="https://i.pinimg.com/736x/05/d7/84/05d784805e083785e14d8555d9428c1b.jpg"
                   alt="Skill Illustration"
                   className="login-illustration-image"
                 />
@@ -113,10 +110,9 @@ const LoginPage: React.FC = () => {
                 <Title level={3} className="login-title">
                   Đăng Nhập
                 </Title>
-
                 <Form
+                  form={form}
                   name="login"
-                  // initialValues={{ remember: true }}
                   onFinish={onFinish}
                   autoComplete="off"
                   layout="vertical"
@@ -135,7 +131,6 @@ const LoginPage: React.FC = () => {
                   >
                     <Input className="custom-input" size="large" />
                   </Form.Item>
-
                   {/* Mật khẩu */}
                   <Form.Item
                     label={
@@ -164,26 +159,21 @@ const LoginPage: React.FC = () => {
                       size="large"
                     />
                   </Form.Item>
-
-                  {/* Nút Đăng nhập chính */}
                   <Form.Item>
                     <Button
                       type="primary"
                       htmlType="submit"
                       className="login-button"
-                      loading={loading}
+                      loading={loadingButton}
                       size="large"
                     >
                       Đăng nhập
                     </Button>
                   </Form.Item>
                 </Form>
-
-                {/* Đăng nhập với Google */}
                 <Divider plain className="login-divider">
                   Hoặc đăng nhập với
                 </Divider>
-
                 <Button
                   className="google-login-button"
                   size="large"
@@ -191,8 +181,6 @@ const LoginPage: React.FC = () => {
                 >
                   Đăng nhập với Google
                 </Button>
-
-                {/* Đăng ký */}
                 <div className="register-link-container">
                   <Text>
                     Chưa có tài khoản?{" "}
